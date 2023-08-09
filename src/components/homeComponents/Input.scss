@@ -1,0 +1,63 @@
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5em 2em;
+    gap: 1em;
+    
+    .text-input-wrapper {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        background-color: var(--primary-medium);
+        padding: .5em;
+        border-radius: .5em;
+
+        .chat-input {
+            width: 100%;
+            border: none;
+            padding-left: 1.5em;
+            background-color: var(--primary-medium);
+            color: var(--primary-white);
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .send-icon {
+            margin-left: auto;
+            height: 32px;
+            width: 32px;  
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .send-file {
+        padding: .5em;
+        background-color: var(--primary-medium);
+        border-radius: .5em;
+        transition: all .2s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--primary-blue);
+            box-shadow: 0 0 .5em var(--primary-blue);
+            transition: all .2s;
+        }
+    }
+    
+    .file-icon {
+        margin-left: auto;
+        height: 32px;
+        width: 32px;
+    }
+
+    .file-input {
+        display: none;
+    }
+}

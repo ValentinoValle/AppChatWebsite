@@ -1,0 +1,14 @@
+
+.messages-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        background-color: var(--primary-light);
+        width: .5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary-medium);
+    }
+}

@@ -1,0 +1,60 @@
+
+.msg-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    max-width: 95%;
+    margin-inline: auto;
+
+    &:nth-child(1) {
+        margin-top: 1em;
+    }
+
+    & > .msg {
+        display: flex;
+
+        .msg-text {
+            background-color: var(--primary-medium);
+            color: var(--primary-white);
+            padding: .5em 1em;
+            max-width: 50%;
+            border-radius: .75em;
+        }
+
+    }
+
+    .img-wrapper {
+        width: 100%;
+        margin: 0 auto;
+
+        .sent-img {
+            width: 30%;
+            border-radius: .75em;
+            margin-bottom: .25em;
+        }
+    }
+}
+
+.sender {
+    .msg-text, .sent-img  {
+        margin-left: auto;
+    }
+
+    .sent-img {
+        border: 5px solid var(--primary-medium);
+    }
+
+    .msg-text {
+        border-radius: .75em;
+    }
+}
+
+.reciever {
+    .msg-text {
+        background-color: var(--primary-blue) !important;
+    }
+
+    .sent-img {
+        border: 5px solid var(--primary-blue);
+    }
+}

@@ -1,0 +1,59 @@
+
+.users-wrapper {
+    color: var(--primary-white);
+    
+    & > h2 {
+        margin-left: 1em;
+        font-size: 1.5rem;
+        opacity: .5;
+    }
+    
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        padding: .5em 1em;
+        overflow: hidden;
+        width: 90%;
+        margin: .75em auto;
+        border-radius: .75em;
+        position: relative;
+        z-index: 1;
+        transition: all .2s;
+        background-color: var(--primary-light);
+        box-shadow: 0 0 .5em var(--primary-light);
+
+        & > div {
+            max-width: 75%;
+            overflow: hidden;
+        }
+
+        .user-img {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    
+        .user-name {
+            font-size: 1.125rem;
+            color: var(--primary-white);
+            font-weight: 700;
+        }
+    }
+
+    .user:hover {
+        cursor: pointer;
+        background-color: var(--primary-blue);
+        box-shadow: 0 0 .5em var(--primary-blue);
+        transition: all .2s;
+    }
+}
+
+.last-msg {
+    font-size: .875rem;
+    opacity: .8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

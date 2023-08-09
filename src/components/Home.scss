@@ -1,0 +1,17 @@
+
+.home-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-wrapper {
+    display: flex;
+    background-color: var(--primary-light);
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 1em var(--primary-dark);
+    overflow: hidden;
+    position: relative;
+}
