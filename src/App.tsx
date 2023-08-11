@@ -9,6 +9,7 @@ import {
   Navigate
 } from 'react-router-dom';
 import { useAuth } from './context/AuthContext.tsx';
+import HowToUse from './components/HowToUse.tsx';
 
 function App() {
   const currentUser = useAuth();
@@ -38,6 +39,7 @@ function App() {
           />
           <Route path='login' element={<Login />}/>
           <Route path='register' element={<Register />}/>
+          <Route path='howtouse' element={<HowToUse />}/>
         </Route>
       </Routes>
     </BrowserRouter>

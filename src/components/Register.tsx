@@ -77,6 +77,7 @@ function Register() {
                     <button className='signup-btn'>Sign up</button>
                 </form>
                 <div>
+                    <p>See <Link className='howtouse-link' to={ '/howtouse' }>How to use</Link></p>
                     <p>Already have an account? <Link className='login-link' to={ '/login' }>Login</Link></p>
                 </div>
             </div>

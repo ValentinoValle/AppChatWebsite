@@ -1,0 +1,45 @@
+
+.howToUse-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-white);
+}
+
+.howToUse-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 35%;
+    text-align: center;
+    background-color: var(--primary-light);
+    border-radius: .75em;
+    box-shadow: 0 0 1em var(--primary-dark);
+    position: relative;
+
+    .howToUse-tittle {
+        width: 80%;
+        font-size: 3rem;
+    }
+
+    .instructions {
+        width: 80%;
+        font-size: 1.125rem;
+    }
+
+    .close-btn {
+        position: absolute;
+        background-color: var(--primary-light);
+        border: none;
+        top: 3%;
+        right: 2%;
+
+        & > img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
