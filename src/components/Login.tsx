@@ -15,7 +15,7 @@ function Login() {
     const password = e.target[1].value;
     
     try {
-      const res = await signInWithEmailAndPassword(auth, email, password)
+      await signInWithEmailAndPassword(auth, email, password)
       navigate('/'); 
     } catch (err) {
       setError(true);
@@ -37,6 +37,7 @@ function Login() {
             <input className='form-input' type="password" name="password" id="password" />
           </div>
           <button className='submit-btn' type="submit">Sign In</button>
+          {error && <span className='error-msg'>Email or password incorrect</span>}
         </form>
         <div>
           <p>Dont have an account? <Link className='register-link' to={ '/register' }>Register</Link></p>

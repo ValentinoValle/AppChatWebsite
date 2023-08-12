@@ -15,10 +15,9 @@
     justify-content: center;
     background-color: var(--primary-light);
     width: 25em;
-    height: 60%;
     border-radius: .75em;
     box-shadow: 0 0 1em var(--primary-dark);
-
+    padding-block: 2em;
     
     .app-tittle {
         font-size: 3rem;
@@ -59,6 +58,10 @@
             border-bottom: 2px solid var(--primary-white);
             transition: border-bottom .2s ease;
         }
+    }
+
+    .error-msg {
+        color: red;
     }
 }
 

@@ -15,9 +15,9 @@
     background-color: var(--primary-light);
     color: var(--primary-white);
     width: 25em;
-    height: 80%;
     border-radius: .75em;
     box-shadow: 0 0 1em var(--primary-dark);
+    padding-block: 2em;
 
     
     .app-tittle {
@@ -78,6 +78,10 @@
         .file-input {
             display: none;
         }
+    }
+
+    .error-msg {
+        color: red;
     }
 }
 

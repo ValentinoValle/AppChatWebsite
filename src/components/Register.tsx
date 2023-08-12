@@ -7,7 +7,13 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from 'react-router-dom';
 
 function Register() {
-    const [error, setError] = useState(false);
+    
+    interface AuthError {
+        code: string,
+        message: string
+    }
+
+    const [error, setError] = useState<AuthError | null>(null);
     const navigate = useNavigate();
 
     async function handleSubmit(e: any) {
@@ -25,7 +31,12 @@ function Register() {
             const uploadTask = uploadBytesResumable(storageRef, file);
 
             uploadTask.on("state_changed", null,   
-                () => { setError(true); }, 
+                (err) => { 
+                    setError({
+                        code: err.code,
+                        message: err.message
+                    });
+                }, 
                 () => {
                     getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
                         await updateProfile(res.user, {
@@ -43,8 +54,11 @@ function Register() {
                     });
                 },
             );
-        } catch (err) {
-            setError(true);
+        } catch (err: any) {
+            setError({
+                code: err.code,
+                message: err.message
+            });
         }
     }
 
@@ -75,6 +89,9 @@ function Register() {
                         <input className='file-input' type="file" id="file"/>
                     </div>
                     <button className='signup-btn'>Sign up</button>
+                    {error && error.code == 'auth/weak-password' && <span className='error-msg'>Password should be at least 6 characters</span>}
+                    {error && error.code == 'auth/email-already-in-use' && <span className='error-msg'>Email already registered</span>}
+                    {error && error.code == 'auth/invalid-email' && <span className='error-msg'>Invalid email</span>}
                 </form>
                 <div>
                     <p>See <Link className='howtouse-link' to={ '/howtouse' }>How to use</Link></p>

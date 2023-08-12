@@ -10,7 +10,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 function Input() {
     const [text, setText] = useState('');
     const [img, setImg] = useState<File | null>(null);
-    const [error, setError] = useState(false)
 
     const currentUser = useAuth();
     const data = useChat().data;
@@ -21,7 +20,7 @@ function Input() {
             const uploadTask = uploadBytesResumable(storageRef, img);
 
             uploadTask.on("state_changed", null,   
-                () => { setError(true); }, 
+                () => { null }, 
                 () => {
                     getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
                         await updateDoc(doc(db, 'chats', data.chatId), {
