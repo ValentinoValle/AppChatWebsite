@@ -6,6 +6,8 @@ import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase
 import { db, storage } from '../../firebase';
 import { v4 as uuidv4 } from 'uuid';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import fileLogo from '../../assets/file-plus-alt-1-svgrepo-com-white.svg';
+import sendLogo from '../../assets/send-alt-1-svgrepo-com.svg';
 
 function Input() {
     const [text, setText] = useState('');
@@ -64,11 +66,11 @@ function Input() {
         <div className="input-wrapper">
             <div className='text-input-wrapper'>
                 <input onKeyDown={ (e) => e.key == 'Enter' ? handleSend() : null } onChange={ (e) => setText(e.target.value) } className='chat-input' value={text} type="text" placeholder='Message'/>
-                <img onClick={ handleSend } className='send-icon' src="src/assets/send-alt-1-svgrepo-com.svg" alt="" />
+                <img onClick={ handleSend } className='send-icon' src={sendLogo} alt="" />
             </div>
             <input onChange={ (e) => setImg(e.target.files![0]) } className='file-input' type="file" id="send-file" />
             <label className='send-file' htmlFor="send-file">
-                <img className='file-icon' src="src/assets/file-plus-alt-1-svgrepo-com-white.svg" alt="" />
+                <img className='file-icon' src={fileLogo} alt="" />
             </label>
         </div>
     );

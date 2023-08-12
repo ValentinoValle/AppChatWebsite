@@ -4,6 +4,7 @@ import { auth } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
 import { useChat } from '../../context/ChatContext';
 import { useSidebar } from '../../context/SidebarContext';
+import crossLogo from '../../assets/cross-svgrepo-com.svg'
 
 function Navbar() {
     const currentUser = useAuth();
@@ -23,7 +24,7 @@ function Navbar() {
             </div>
             <button className='logout-btn' onClick={() => userSignOut(auth)}>Logout</button>
             <button className='close-sidebar-btn' onClick={() => toggleVisibility()}>
-                <img src="src/assets/cross-svgrepo-com.svg" alt="" />
+                <img src={crossLogo} alt="" />
             </button>
         </div>
     );

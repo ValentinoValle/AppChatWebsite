@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
 import { useNavigate, Link } from 'react-router-dom';
+import fileLogo from '../assets/file-plus-alt-1-svgrepo-com.svg'
 
 function Register() {
     
@@ -83,7 +84,7 @@ function Register() {
                     </div>
                     <div className='file-input-wrapper'>
                         <label htmlFor="file">
-                            <img className='file-svg' src="src/assets/file-plus-alt-1-svgrepo-com.svg" alt="" />
+                            <img className='file-svg' src={fileLogo} alt="" />
                             <span>Add an avatar</span>
                         </label>
                         <input className='file-input' type="file" id="file"/>
